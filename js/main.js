@@ -25,17 +25,25 @@ const age = parseInt(prompt("Quanti anni hai?"));
 //Stabiliamo il prezzo con una nuova variabile
 let price = 0.21 * numKm;
 
-//Stabiliamo gli sconti in base all'età: se < 18 del 20%, se > 65 del 40%, sennò paga a prezzo fisso
+//Stabiliamo gli sconti in base all'età: se non ha inserito un prezzo compare alert e messaggio di errore, se < 18 del 20%, se > 65 del 40%, sennò paga a prezzo fisso
 if (isNaN(numKm) || isNaN(age)) {
   alert("Inserisci un valore numerico!");
+  document.getElementById(
+    "messaggio"
+  ).innerHTML = `Non è possibile calcolare un prezzo`;
 } else if (age < 18) {
   price = price * 0.8;
+  document.getElementById("messaggio").innerHTML = `Il prezzo è ${price.toFixed(
+    2
+  )}€`;
 } else if (age > 65) {
   price = price * 0.6;
+  document.getElementById("messaggio").innerHTML = `Il prezzo è ${price.toFixed(
+    2
+  )}€`;
 } else {
   price = price;
+  document.getElementById("messaggio").innerHTML = `Il prezzo è ${price.toFixed(
+    2
+  )}€`;
 }
-
-document.getElementById("messaggio").innerHTML = `Il prezzo è ${price.toFixed(
-  2
-)}€`;
