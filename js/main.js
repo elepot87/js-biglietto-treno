@@ -7,7 +7,7 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 L’output del prezzo finale va scritto in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca. */
 
 // Chiedere il numero di Km da percorrere
-let numKm = parseInt(prompt("Quanti km devi percorrere?"));
+const numKm = parseInt(prompt("Quanti km devi percorrere?"));
 
 //Validazione del dato numerico per i km
 // if (isNaN(numKm)) {
@@ -15,7 +15,7 @@ let numKm = parseInt(prompt("Quanti km devi percorrere?"));
 // }
 
 // Chiedere quanti anni ha l'utente
-let age = parseInt(prompt("Quanti anni hai?"));
+const age = parseInt(prompt("Quanti anni hai?"));
 
 //Validazione del dato numerico per l'età
 // if (age <= 0 || isNaN(age)) {
@@ -28,8 +28,6 @@ let price = 0.21 * numKm;
 //Stabiliamo gli sconti in base all'età: se < 18 del 20%, se > 65 del 40%, sennò paga a prezzo fisso
 if (isNaN(numKm) || isNaN(age)) {
   alert("Inserisci un valore numerico!");
-  let numKm = prompt("Quanti km devi percorrere?");
-  let age = prompt("Quanti anni hai?");
 } else if (age < 18) {
   price = price * 0.8;
 } else if (age > 65) {
