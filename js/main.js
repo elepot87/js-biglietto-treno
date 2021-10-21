@@ -10,23 +10,25 @@ L’output del prezzo finale va scritto in forma umana (con massimo due decimali
 const numKm = parseInt(prompt("Quanti km devi percorrere?"));
 
 //Validazione del dato numerico per i km
-if (isNaN(numKm)) {
-  alert("Inserisci un valore numerico!");
-}
+// if (isNaN(numKm)) {
+//   alert("Inserisci un valore numerico!");
+// }
 
 // Chiedere quanti anni ha l'utente
 const age = parseInt(prompt("Quanti anni hai?"));
 
 //Validazione del dato numerico per l'età
-if (age <= 0 || isNaN(age)) {
-  alert("Inserisci un'età valida!");
-}
+// if (age <= 0 || isNaN(age)) {
+//   alert("Inserisci un'età valida!");
+// }
 
 //Stabiliamo il prezzo con una nuova variabile
 let price = 0.21 * numKm;
 
 //Stabiliamo gli sconti in base all'età: se < 18 del 20%, se > 65 del 40%, sennò paga a prezzo fisso
-if (age < 18) {
+if (isNaN(numKm) || isNaN(age)) {
+  alert("Inserisci un valore numerico!");
+} else if (age < 18) {
   price = price * 0.8;
 } else if (age > 65) {
   price = price * 0.6;
